@@ -94,8 +94,7 @@ resource "azurerm_virtual_machine" "catapp" {
   location            = var.location
   resource_group_name = azurerm_resource_group.myresourcegroup.name
   vm_size             = var.vm_size
-  Department          = "devops"
-
+  
   network_interface_ids         = [azurerm_network_interface.catapp-nic.id]
   delete_os_disk_on_termination = "true"
 
@@ -123,7 +122,10 @@ resource "azurerm_virtual_machine" "catapp" {
     disable_password_authentication = false
   }
 
-  tags = {}
+  tags = {
+    Department = "devops"
+    Billing    = "true"
+  }
 }
 
 # We're using a little trick here so we can run the provisioner without
