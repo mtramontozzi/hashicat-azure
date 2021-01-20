@@ -1,5 +1,5 @@
 module "network" {
   source  = "app.terraform.io/Staples-MT/network/azurerm"
   version = "3.0.1"
-  resource_group_name = "Guarav"
+  resource_group_name = "mark-tram"
 }
